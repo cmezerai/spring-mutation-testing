@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage>
+<block classname='com.example.core.CalculatorTest' method='testAdd()V' number='3'><tests>
+<test name='com.example.core.CalculatorTest.[engine:junit-jupiter]/[class:com.example.core.CalculatorTest]/[method:testAdd()]'/>
+</tests>
+</block>
+<block classname='com.example.core.CalculatorTest' method='testAdd()V' number='1'><tests>
+<test name='com.example.core.CalculatorTest.[engine:junit-jupiter]/[class:com.example.core.CalculatorTest]/[method:testAdd()]'/>
+</tests>
+</block>
+<block classname='com.example.core.CalculatorTest' method='testAdd()V' number='2'><tests>
+<test name='com.example.core.CalculatorTest.[engine:junit-jupiter]/[class:com.example.core.CalculatorTest]/[method:testAdd()]'/>
+</tests>
+</block>
+<block classname='com.example.core.CalculatorTest' method='&lt;init&gt;()V' number='0'><tests>
+<test name='com.example.core.CalculatorTest.[engine:junit-jupiter]/[class:com.example.core.CalculatorTest]/[method:testAdd()]'/>
+</tests>
+</block>
+<block classname='com.example.core.CalculatorTest' method='&lt;init&gt;()V' number='1'><tests>
+<test name='com.example.core.CalculatorTest.[engine:junit-jupiter]/[class:com.example.core.CalculatorTest]/[method:testAdd()]'/>
+</tests>
+</block>
+<block classname='com.example.core.CalculatorTest' method='testAdd()V' number='0'><tests>
+<test name='com.example.core.CalculatorTest.[engine:junit-jupiter]/[class:com.example.core.CalculatorTest]/[method:testAdd()]'/>
+</tests>
+</block>
+<block classname='com.example.core.Calculator' method='&lt;init&gt;()V' number='1'><tests>
+<test name='com.example.core.CalculatorTest.[engine:junit-jupiter]/[class:com.example.core.CalculatorTest]/[method:testAdd()]'/>
+</tests>
+</block>
+<block classname='com.example.core.Calculator' method='&lt;init&gt;()V' number='0'><tests>
+<test name='com.example.core.CalculatorTest.[engine:junit-jupiter]/[class:com.example.core.CalculatorTest]/[method:testAdd()]'/>
+</tests>
+</block>
+<block classname='com.example.core.Calculator' method='add(II)I' number='0'><tests>
+<test name='com.example.core.CalculatorTest.[engine:junit-jupiter]/[class:com.example.core.CalculatorTest]/[method:testAdd()]'/>
+</tests>
+</block>
+</coverage>

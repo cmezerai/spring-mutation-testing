@@ -1,0 +1,68 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>spring-mutation-testing</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>core</module>
+    <module>web</module>
+  </modules>
+
+  <properties>
+    <java.version>21</java.version>
+    <pitest.version>1.15.2</pitest.version>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+  </properties>
+  <dependencies>
+    <!-- Your test framework -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>5.10.0</version> <!-- match your version -->
+      <scope>test</scope>
+    </dependency>
+
+    <!-- PIT plugin for JUnit 5 -->
+    <dependency>
+      <groupId>org.pitest</groupId>
+      <artifactId>pitest-junit5-plugin</artifactId>
+      <version>1.2.1</version> <!-- use latest compatible -->
+    </dependency>
+  </dependencies>
+
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.5.1</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.13.0</version> <!-- Latest version -->
+        <configuration>
+          <source>21</source> <!-- Specify Java version 8 -->
+          <target>21</target> <!-- Specify Java version 8 -->
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.pitest</groupId>
+        <artifactId>pitest-maven</artifactId>
+        <version>1.16.3</version>
+             <executions>
+          <execution>
+            <goals>
+              <goal>report-aggregate</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+     </plugins>
+  </build>
+</project>
