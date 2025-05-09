@@ -55,11 +55,7 @@ jobs:
 
       - name: Running PIT Mutation Testing 🧬
         run: |
-          mvn test-compile org.pitest:pitest-maven:mutationCoverage \
-              -DoutputFormats=HTML,JSON \
-              -DhistoryInputFile=target/pit-history/history.txt \
-              -DhistoryOutputFile=target/pit-history/history.txt
-
+          mvn test-compile org.pitest:pitest-maven:mutationCoverage
       - name: Publish PIT Mutation Report to GitHub Pages
         if: success()
         run: |

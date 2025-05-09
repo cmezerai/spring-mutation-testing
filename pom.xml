@@ -52,7 +52,6 @@
                 <configuration>
                     <outputFormats>
                         <outputFormat>HTML</outputFormat>
-                        <outputFormat>JSON</outputFormat>
                     </outputFormats>
                     <historyInputFile>${project.basedir}/target/pit-history/history.txt</historyInputFile>
                     <historyOutputFile>${project.basedir}/target/pit-history//history.txt</historyOutputFile>
