@@ -105,3 +105,48 @@ jobs:
           git add .
           git commit -m "Update PIT mutation report"
           git push origin gh-pages
+
+```
+## Consulter le Rapport de Mutation
+
+Une fois les tests de mutation exécutés, un rapport détaillé est généré et publié sur la branche `gh-pages` de ce dépôt. Ce rapport peut être consulté via [GitHub Pages](https://<votre-nom-utilisateur>.github.io/<nom-du-dépot>/).
+
+## Installation et Exécution des Tests Locaux
+
+### Prérequis :
+
+- **Java 21** (JDK 21)
+- **Maven** pour gérer les dépendances et les tests.
+
+### Étapes d'installation :
+
+1. Clonez le dépôt :
+   ```bash
+   git clone https://github.com/<votre-nom-utilisateur>/<nom-du-dépot>.git
+   cd <nom-du-dépot>
+   ```
+
+2. Installez les dépendances Maven :
+   ```bash
+   mvn install
+   ```
+
+3. Exécutez les tests de mutation localement :
+   ```bash
+   mvn test-compile org.pitest:pitest-maven:mutationCoverage
+   ```
+
+## Contribuer
+
+Les contributions sont les bienvenues ! Pour contribuer, suivez ces étapes :
+
+1. Fork ce projet.
+2. Créez une nouvelle branche (`git checkout -b feature/ma-fonctionnalité`).
+3. Faites vos modifications et committez-les (`git commit -am 'Ajout d\'une fonctionnalité'`).
+4. Poussez votre branche (`git push origin feature/ma-fonctionnalité`).
+5. Créez une Pull Request pour fusionner vos modifications.
+
+## Licence
+
+Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de détails.
+
