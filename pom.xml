@@ -50,11 +50,12 @@
                 <artifactId>pitest-maven</artifactId>
                 <version>1.16.3</version>
                 <configuration>
+                    <outputFormats>
+                        <outputFormat>HTML</outputFormat>
+                        <outputFormat>JSON</outputFormat>
+                    </outputFormats>
                     <historyInputFile>${project.basedir}/target/pit-history/history.txt</historyInputFile>
                     <historyOutputFile>${project.basedir}/target/pit-history//history.txt</historyOutputFile>
-                    <outputFormats>
-                        <param>HTML</param>
-                    </outputFormats>
                 </configuration>
             </plugin>
         </plugins>
