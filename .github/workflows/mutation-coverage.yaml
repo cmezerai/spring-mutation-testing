@@ -12,7 +12,7 @@ on:
 jobs:
   build-and-test:
     name: Java (build & test) ☕️
-    runs-on: [ self-hosted, Linux, standard ]
+    runs-on: ubuntu-latest
     permissions:
       contents: write
       id-token: write
