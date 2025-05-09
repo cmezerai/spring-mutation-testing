@@ -16,7 +16,7 @@ build/
 **/build/
 
 # IntelliJ IDEA
-.idea/
+.github/workflows/.idea/
 *.iws
 *.iml
 *.ipr
