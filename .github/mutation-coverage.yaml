@@ -1,0 +1,64 @@
+name: Mutation Testing 🧬
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    name: Java (build & test) ☕️
+    runs-on: [ self-hosted, Linux, standard ]
+    permissions:
+      contents: write
+      id-token: write
+
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Cache Pitest history
+        uses: actions/cache@v4
+        with:
+          path: target/pit-history
+          key: pitest-history-${{ github.ref }}-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            pitest-history-refs/heads/main
+            pitest-history-
+
+      - name: Cache Maven dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
+      - name: Running PIT Mutation Testing 🧬
+        run: |
+          mvn clean test-compile org.pitest:pitest-maven:mutationCoverage \
+              -DhistoryInputFile=target/pit-history/history.txt \
+              -DhistoryOutputFile=target/pit-history/history.txt
+
+      - name: Publish PIT Mutation Report to GitHub Pages
+        if: success()
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git clone --depth 1 --branch gh-pages https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} gh-pages 
+          cp -r target/pit-reports/* gh-pages/
+          cd gh-pages
+          git add .
+          git commit -m "Update PIT mutation report"
+          git push origin gh-pages
