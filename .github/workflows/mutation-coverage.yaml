@@ -40,11 +40,6 @@ jobs:
             pitest-history-refs/heads/main
             pitest-history-
 
-      - name: Debug cache
-        run: |
-          ls target/*
-          cat target/pit-history/history.txt
-
       - name: Cache Maven dependencies
         uses: actions/cache@v3
         with:
@@ -56,6 +51,7 @@ jobs:
       - name: Running PIT Mutation Testing 🧬
         run: |
           mvn test-compile org.pitest:pitest-maven:mutationCoverage
+
       - name: Publish PIT Mutation Report to GitHub Pages
         if: success()
         run: |
