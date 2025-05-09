@@ -50,7 +50,7 @@ jobs:
 
       - name: Running PIT Mutation Testing 🧬
         run: |
-          mvn test-compile org.pitest:pitest-maven:mutationCoverage
+          mvn test-compile org.pitest:pitest-maven:mutationCoverage 
 
       - name: Publish PIT Mutation Report to GitHub Pages
         if: success()
