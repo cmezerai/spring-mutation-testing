@@ -17,5 +17,9 @@ class CalculatorServiceTest {
     void testIsPositive() {
         assertTrue(service.isPositive(10));
         assertFalse(service.isPositive(-1));
+        assertFalse(service.isPositive(0));
+        assertFalse(service.isPair(1));
+        assertTrue(service.isPair(2));
+
     }
 }
