@@ -28,6 +28,15 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
+      - name: Verification de l'existence du mutation history
+        run: |
+          if [ -f target/pit-history/mutationHistory.json ]; then
+            echo "Fichier d'historique trouvé :"
+          head -n 20 target/pit-history/mutationHistory.json
+          else
+            echo "Aucun fichier mutationHistory.json trouvé."
+          fi
+
       - name: Ensure pit-history directory exists
         run: mkdir -p target/pit-history
 
@@ -50,7 +59,7 @@ jobs:
 
       - name: Running PIT Mutation Testing 🧬
         run: |
-          mvn test-compile org.pitest:pitest-maven:mutationCoverage 
+          mvn -X test-compile org.pitest:pitest-maven:mutationCoverage 
 
       - name: Publish PIT Mutation Report to GitHub Pages
         if: success()
