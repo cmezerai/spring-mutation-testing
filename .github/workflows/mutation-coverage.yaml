@@ -50,11 +50,11 @@ jobs:
 
       - name: Verification de l'existence du mutation history
         run: |
-          if [ -f target/pit-history/mutationHistory.json ]; then
+          if [ -f target/pit-history/history.txt ]; then
             echo "Fichier d'historique trouvé :"
-          head -n 20 target/pit-history/mutationHistory.json
+          head -n 20 target/pit-history/history.txt
           else
-            echo "Aucun fichier mutationHistory.json trouvé."
+            echo "Aucun fichier history.txt trouvé."
           fi
 
       - name: Running PIT Mutation Testing 🧬
